@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Himanshu Portfolio
 
 A modern, cyberpunk-themed portfolio website built with Next.js, TypeScript, and Tailwind CSS. This project showcases a full-stack web developer's skills and projects with stunning animations and responsive design.
@@ -234,3 +235,6 @@ This project is open source and available under the [MIT License](LICENSE).
 **Created with ❤️ By Himanshu**
 
 **Music played 🎹 By Himanshu** 
+=======
+# my_portfolio
+>>>>>>> fc41092be97f47a808bc7880427dcd5d716efb36
