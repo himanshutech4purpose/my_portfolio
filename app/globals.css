@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 text-gray-800 font-sans;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cherry-blossom" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23ffb3d9" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23cherry-blossom)"/></svg>');
+  }
+}
+
+@layer components {
+  .sidebar {
+    @apply fixed left-0 top-0 h-full w-64 bg-white/80 backdrop-blur-sm border-r border-gray-200 shadow-lg z-40;
+  }
+  
+  .main-content {
+    @apply lg:ml-64 min-h-screen;
+  }
+  
+  .profile-circle {
+    @apply w-24 h-24 rounded-full border-4 border-white shadow-lg mx-auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .nav-item {
+    @apply flex items-center gap-3 px-6 py-3 text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer;
+  }
+  
+  .nav-item.active {
+    @apply text-blue-600 bg-blue-50 border-r-2 border-blue-600;
+  }
+  
+  .hero-bg {
+    background-image: linear-gradient(135deg, rgba(255, 182, 193, 0.3) 0%, rgba(221, 160, 221, 0.3) 50%, rgba(173, 216, 230, 0.3) 100%);
+  }
+  
+  .rainbow-mix {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .rainbow-mix::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+      rgba(255, 0, 0, 0.1) 0%, 
+      rgba(255, 165, 0, 0.1) 20%, 
+      rgba(255, 255, 0, 0.1) 40%, 
+      rgba(0, 255, 0, 0.1) 60%, 
+      rgba(0, 0, 255, 0.1) 80%, 
+      rgba(238, 130, 238, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .rainbow-mix:hover::before {
+    opacity: 1;
+  }
+  
+  .social-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white transition-transform duration-300 hover:scale-110;
+  }
+  
+  .title-font {
+    font-family: 'Brush Script MT', cursive;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-petal {
+    animation: petal 10s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes petal {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+} 
