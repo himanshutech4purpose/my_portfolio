@@ -21,7 +21,7 @@ const About = () => {
   ]
 
   return (
-    <div className="w-full">
+    <div id="about" className="py-20 bg-gradient-to-br from-pink-50 to-purple-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
