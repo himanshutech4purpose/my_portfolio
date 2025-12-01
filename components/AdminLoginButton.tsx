@@ -17,37 +17,25 @@ const AdminLoginButton = () => {
     setLoading(true)
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      })
+          const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            credentials: 'include', // Include cookies in request/response
+            body: JSON.stringify({ email, password }),
+          })
 
       const result = await response.json()
 
       if (result.success) {
         setIsOpen(false)
-        // Verify cookie is set before redirecting
-        const checkAuth = async () => {
-          try {
-            const authCheck = await fetch('/api/auth/check')
-            const authData = await authCheck.json()
-            if (authData.authenticated) {
-              window.location.href = '/admin'
-            } else {
-              // Retry after a short delay
-              setTimeout(checkAuth, 200)
-            }
-          } catch (err) {
-            // If check fails, try redirect anyway after delay
-            setTimeout(() => {
-              window.location.href = '/admin'
-            }, 500)
-          }
-        }
-        checkAuth()
+        // Cookie is set in the response headers
+        // Wait a moment for browser to process the cookie before redirecting
+        await new Promise(resolve => setTimeout(resolve, 200))
+        
+        // Redirect to admin page - cookie should be available now
+        window.location.href = '/admin'
       } else {
         setError(result.error || 'Login failed')
       }

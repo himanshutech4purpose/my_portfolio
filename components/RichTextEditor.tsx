@@ -16,6 +16,7 @@ interface RichTextEditorProps {
 
 const RichTextEditor = ({ content, onChange, placeholder = 'Start writing your blog post...' }: RichTextEditorProps) => {
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
       StarterKit.configure({
         heading: {

@@ -102,7 +102,8 @@ export async function POST(request: NextRequest) {
       path: '/', // Ensure cookie is available for all paths
     })
     
-    console.log('Cookie set in response')
+    console.log('[Login] Cookie set successfully')
+    console.log('[Login] Cookie will be available on next request')
 
     // Update last login time (don't wait for this)
     db.collection('users').doc(userId).update({

@@ -24,13 +24,13 @@ const ViewCounter = () => {
     // Fetch initial views
     fetchViews()
 
-    // Poll for updates every 30 seconds (reduced frequency to avoid excessive API calls)
+    // Poll for updates every 1 day (86400000ms = 24 hours)
     const interval = setInterval(() => {
       setIsUpdating(true)
       fetchViews().finally(() => {
         setTimeout(() => setIsUpdating(false), 500)
       })
-    }, 30000) // Changed from 5000ms (5s) to 30000ms (30s)
+    }, 86400000) // 1 day = 24 hours * 60 minutes * 60 seconds * 1000ms
 
     return () => clearInterval(interval)
   }, [])

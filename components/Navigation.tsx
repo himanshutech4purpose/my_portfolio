@@ -16,10 +16,15 @@ const NAV_ITEMS = [
 ] as const
 
 // Profile images (excluding default_pic.png which is the thumbnail)
+// const PROFILE_IMAGES = [
+//   '/profile/default_full_pic.png',
+//   '/profile/chopta.png',
+// ]
 const PROFILE_IMAGES = [
-  '/profile/default_full_pic.png',
-  '/profile/chopta.png',
+  'https://res.cloudinary.com/dleou9lwe/image/upload/v1764590593/ropar_forest_ovu4ab.jpg',
+  'https://res.cloudinary.com/dleou9lwe/image/upload/v1764590590/chopta_vgftig.jpg'
 ]
+
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home')

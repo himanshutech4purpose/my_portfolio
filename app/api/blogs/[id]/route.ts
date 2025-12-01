@@ -14,6 +14,7 @@ export async function GET(
 ) {
   try {
     const { id } = await params
+    const user = await getCurrentUser() // Check if user is admin
     const doc = await db.collection('blogs').doc(id).get()
 
     if (!doc.exists) {
@@ -26,10 +27,20 @@ export async function GET(
     const blogData = doc.data()
     const blog = { id: doc.id, ...blogData } as any
 
-    // Increment views
-    await db.collection('blogs').doc(id).update({
-      views: (blogData?.views || 0) + 1,
-    })
+    // If not admin, only allow access to published blogs
+    if (!user && !blog.published) {
+      return NextResponse.json(
+        { success: false, error: 'Blog not found' },
+        { status: 404 }
+      )
+    }
+
+    // Increment views (only for published blogs or admin)
+    if (blog.published || user) {
+      await db.collection('blogs').doc(id).update({
+        views: (blogData?.views || 0) + 1,
+      })
+    }
 
     return NextResponse.json({ success: true, blog })
   } catch (error) {

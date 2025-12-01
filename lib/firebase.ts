@@ -5,7 +5,20 @@ import { getFirestore, FieldValue } from 'firebase-admin/firestore'
 // Initialize Firebase Admin if not already initialized
 if (!getApps().length) {
   try {
-    const serviceAccount = require('../myapp-21f4c-firebase-adminsdk-ayghz-9f55842d90.json')
+    // Get credentials from environment variables
+    const projectId = process.env.FIREBASE_PROJECT_ID
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
+    
+    if (!projectId || !clientEmail || !privateKey) {
+      throw new Error('Missing Firebase credentials in environment variables. Please set FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, and FIREBASE_PRIVATE_KEY')
+    }
+    
+    const serviceAccount = {
+      projectId,
+      clientEmail,
+      privateKey,
+    }
     
     initializeApp({
       credential: cert(serviceAccount),

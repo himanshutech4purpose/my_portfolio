@@ -15,7 +15,22 @@ const path = require('path')
 
 // Initialize Firebase Admin
 if (!admin.apps.length) {
-  const serviceAccount = require(path.join(__dirname, '../myapp-21f4c-firebase-adminsdk-ayghz-9f55842d90.json'))
+  // Get credentials from environment variables
+  const projectId = process.env.FIREBASE_PROJECT_ID
+  const clientEmail = process.env.FIREBASE_CLIENT_EMAIL
+  const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
+  
+  if (!projectId || !clientEmail || !privateKey) {
+    console.error('❌ Error: Missing Firebase credentials in environment variables')
+    console.error('Please set FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, and FIREBASE_PRIVATE_KEY in your .env file')
+    process.exit(1)
+  }
+  
+  const serviceAccount = {
+    projectId,
+    clientEmail,
+    privateKey,
+  }
   
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),

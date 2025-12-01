@@ -67,14 +67,7 @@ const BlogEditor = () => {
   }
 
   const handleNewBlog = () => {
-    setSelectedBlog(null)
-    setIsEditing(true)
-    setTitle('')
-    setContent('')
-    setExcerpt('')
-    setTags('')
-    setPublished(false)
-    setFeaturedImage('')
+    router.push('/admin/blogs/create')
   }
 
   const handleEdit = (blog: Blog) => {

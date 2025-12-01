@@ -17,12 +17,13 @@ const Hero = () => {
 
   // Memoize blossom positions to prevent recalculation on re-renders
   // Uses golden ratio for visually pleasing distribution
+  // Round to 4 decimal places to ensure consistent server/client rendering
   const blossoms = useMemo(() => {
     return Array.from({ length: 20 }, (_, i) => {
       const seed = i * 0.618033988749895
       return {
-        left: seededRandom(seed) * 100,
-        top: seededRandom(seed + 1) * 100,
+        left: Math.round(seededRandom(seed) * 100 * 10000) / 10000,
+        top: Math.round(seededRandom(seed + 1) * 100 * 10000) / 10000,
         xOffset: seededRandom(seed + 2) * 50 - 25,
         duration: 10 + seededRandom(seed + 3) * 10,
       }
@@ -64,8 +65,8 @@ const Hero = () => {
             key={i}
             className="absolute w-2 h-2 bg-soft-pink rounded-full opacity-60"
             style={{
-              left: `${blossom.left}%`,
-              top: `${blossom.top}%`,
+              left: `${blossom.left.toFixed(4)}%`,
+              top: `${blossom.top.toFixed(4)}%`,
             }}
             animate={{
               y: [0, -100, 0],
@@ -102,7 +103,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Rainbow Color Mixing Area */}
-        <motion.div
+        {/* <motion.div
           ref={rainbowRef}
           className="relative w-full h-32 bg-gradient-to-r from-red-400 via-yellow-400 via-green-400 via-blue-400 via-purple-400 to-pink-400 rounded-2xl mb-8 overflow-hidden cursor-none"
           style={{
@@ -122,7 +123,7 @@ const Hero = () => {
               filter: 'blur(20px)',
             }}
           />
-        </motion.div>
+        </motion.div> */}
 
         {/* Social Links */}
         <motion.div
