@@ -2,10 +2,9 @@
 
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Send, Github, Linkedin, Twitter, CheckCircle, AlertCircle } from 'lucide-react'
-import { SITE_CONFIG } from '@/lib/constants'
+import { Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { contactInfo, socialLinks } from '@/data/contact'
 
-// Contact information and social links
 const Contact = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [formMessage, setFormMessage] = useState('')
@@ -55,32 +54,6 @@ const Contact = () => {
       setFormMessage('An error occurred. Please try again later.')
     }
   }
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      value: SITE_CONFIG.email,
-      link: `mailto:${SITE_CONFIG.email}`
-    },
-    {
-      icon: Linkedin,
-      title: 'LinkedIn',
-      value: 'himanshutech4purpose',
-      link: SITE_CONFIG.linkedin
-    },
-    {
-      icon: Github,
-      title: 'GitHub',
-      value: 'himanshutech4purpose',
-      link: SITE_CONFIG.github
-    }
-  ]
-
-  const socialLinks = [
-    { icon: Linkedin, href: SITE_CONFIG.linkedin, label: 'LinkedIn' },
-    { icon: Github, href: SITE_CONFIG.github, label: 'GitHub' },
-    { icon: Twitter, href: '#', label: 'Twitter' }
-  ]
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-pink-50 to-purple-50">

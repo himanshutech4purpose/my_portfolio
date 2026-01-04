@@ -1,5 +1,5 @@
 // Initialize admin user if it doesn't exist
-import { db } from './firebase'
+import { db } from '@/lib/firebase'
 import bcrypt from 'bcryptjs'
 import { Timestamp } from 'firebase-admin/firestore'
 

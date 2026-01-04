@@ -1,4 +1,4 @@
-import BlogEditor from '@/components/BlogEditor'
+import BlogEditor from '@/components/molecules/BlogEditor'
 
 export default async function AdminPage() {
   // Middleware handles authentication, so we don't need to check here

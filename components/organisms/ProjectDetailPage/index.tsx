@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, ExternalLink, Github, Brain, Globe, Database } from 'lucide-react'
 import Link from 'next/link'
-import { Project } from '@/lib/projects'
+import { Project } from '@/data/projects'
 
 interface ProjectDetailPageProps {
   project: Omit<Project, 'icon'>

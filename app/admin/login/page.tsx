@@ -1,4 +1,4 @@
-import AdminLoginForm from '@/components/AdminLoginForm'
+import AdminLoginForm from '@/components/molecules/AdminLoginForm'
 
 export default async function AdminLoginPage() {
   // Middleware handles redirecting authenticated users

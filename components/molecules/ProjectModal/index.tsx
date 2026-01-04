@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ExternalLink, Github } from 'lucide-react'
-import { Project } from '@/lib/projects'
+import { Project } from '@/data/projects'
 
 interface ProjectModalProps {
   project: Project | null

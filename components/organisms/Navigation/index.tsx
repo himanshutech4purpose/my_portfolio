@@ -3,27 +3,8 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { Home, User, Briefcase, FolderOpen, FileText, Mail, Heart, Music, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react'
-
-// Navigation configuration - centralized for easy maintenance
-const NAV_ITEMS = [
-  { id: 'home', name: 'Home', icon: Home },
-  { id: 'about', name: 'About', icon: User },
-  { id: 'services', name: 'Services', icon: Briefcase },
-  { id: 'portfolio', name: 'Portfolio', icon: FolderOpen },
-  { id: 'blog', name: 'Blog', icon: FileText },
-  { id: 'contact', name: 'Contact', icon: Mail },
-] as const
-
-// Profile images (excluding default_pic.png which is the thumbnail)
-// const PROFILE_IMAGES = [
-//   '/profile/default_full_pic.png',
-//   '/profile/chopta.png',
-// ]
-const PROFILE_IMAGES = [
-  'https://res.cloudinary.com/dleou9lwe/image/upload/v1764590593/ropar_forest_ovu4ab.jpg',
-  'https://res.cloudinary.com/dleou9lwe/image/upload/v1764590590/chopta_vgftig.jpg'
-]
+import { Heart, Music, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { NAV_ITEMS, PROFILE_IMAGES } from '@/data/navigation'
 
 
 const Navigation = () => {

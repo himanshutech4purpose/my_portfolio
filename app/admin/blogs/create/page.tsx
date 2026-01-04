@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import BlogForm from '@/components/BlogForm'
+import BlogForm from '@/components/molecules/BlogForm'
 
 export default function CreateBlogPage() {
   const router = useRouter()

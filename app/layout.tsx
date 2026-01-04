@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { SITE_CONFIG } from '@/lib/constants'
-import ViewTracker from '@/components/ViewTracker'
-import '@/lib/init-on-startup' // Auto-initialize admin user on server startup
+import ViewTracker from '@/components/atoms/ViewTracker'
+import '@/utils/init-on-startup' // Auto-initialize admin user on server startup
 
 const inter = Inter({ 
   subsets: ['latin'],

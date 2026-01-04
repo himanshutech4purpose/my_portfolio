@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Save, ArrowLeft } from 'lucide-react'
-import RichTextEditor from './RichTextEditor'
+import RichTextEditor from '@/components/molecules/RichTextEditor'
 
 interface BlogFormProps {
   initialData?: {

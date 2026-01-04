@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
-import { projects, Project } from '@/lib/projects'
-import ProjectDetailPage from '@/components/ProjectDetailPage'
+import { projects, Project } from '@/data/projects'
+import ProjectDetailPage from '@/components/organisms/ProjectDetailPage'
 
 interface PageProps {
   params: Promise<{ id: string }>

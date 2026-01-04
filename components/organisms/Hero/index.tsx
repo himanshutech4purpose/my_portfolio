@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Github, Send, Mail, Linkedin } from 'lucide-react'
 import { useEffect, useRef, useMemo } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
+import { heroData } from '@/data/hero'
 
 // Seeded random function ensures consistent positions on server and client
 // Prevents hydration mismatches by generating deterministic values
@@ -91,14 +92,13 @@ const Hero = () => {
           className="mb-8"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Himanshu
+            {heroData.name}
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-6">
-            Full Stack Developer & Tech Enthusiast
+            {heroData.title}
           </p>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Passionate about creating innovative web solutions and exploring cutting-edge technologies. 
-            Specialized in React, Node.js, and cloud technologies.
+            {heroData.description}
           </p>
         </motion.div>
 
@@ -173,21 +173,21 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <motion.a
-            href="#portfolio"
+            href={heroData.cta.primary.href}
             className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>View My Work</span>
+            <span>{heroData.cta.primary.text}</span>
             <Send size={20} />
           </motion.a>
           <motion.a
-            href="#contact"
+            href={heroData.cta.secondary.href}
             className="px-8 py-3 bg-white/80 backdrop-blur-sm text-primary border-2 border-primary rounded-full font-semibold hover:bg-primary hover:text-white transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get In Touch
+            {heroData.cta.secondary.text}
           </motion.a>
         </motion.div>
       </div>

@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { Heart, Music, Github, Linkedin, Mail } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/constants'
-import ViewCounter from './ViewCounter'
+import { footerData } from '@/data/footer'
+import ViewCounter from '@/components/atoms/ViewCounter'
 
 const Footer = () => {
   return (
@@ -23,11 +24,11 @@ const Footer = () => {
                 <span className="text-white font-bold text-sm">H</span>
               </div>
               <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Himanshu
+                {footerData.brand.name}
               </h3>
             </div>
             <p className="text-gray-600 mb-4">
-              Full Stack Developer passionate about creating innovative digital solutions and exploring cutting-edge technologies.
+              {footerData.brand.description}
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
               <motion.a
@@ -74,31 +75,13 @@ const Footer = () => {
           >
             <h4 className="text-lg font-bold text-gray-800 mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#home" className="text-gray-600 hover:text-primary transition-colors duration-300">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-gray-600 hover:text-primary transition-colors duration-300">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-600 hover:text-primary transition-colors duration-300">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="text-gray-600 hover:text-primary transition-colors duration-300">
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-600 hover:text-primary transition-colors duration-300">
-                  Contact
-                </a>
-              </li>
+              {footerData.quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-gray-600 hover:text-primary transition-colors duration-300">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -112,12 +95,9 @@ const Footer = () => {
           >
             <h4 className="text-lg font-bold text-gray-800 mb-4">Services</h4>
             <ul className="space-y-2">
-              <li className="text-gray-600">Web Development</li>
-              <li className="text-gray-600">Mobile Development</li>
-              <li className="text-gray-600">Backend Development</li>
-              <li className="text-gray-600">Cloud & DevOps</li>
-              <li className="text-gray-600">UI/UX Design</li>
-              <li className="text-gray-600">Technical Consulting</li>
+              {footerData.services.map((service) => (
+                <li key={service} className="text-gray-600">{service}</li>
+              ))}
             </ul>
           </motion.div>
         </div>
@@ -132,7 +112,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-600">
-              © 2024 Himanshu. All rights reserved.
+              {footerData.copyright}
             </p>
             <div className="flex items-center space-x-4 text-gray-600">
               <ViewCounter />

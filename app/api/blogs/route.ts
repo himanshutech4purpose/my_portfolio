@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getCurrentUser } from '@/lib/auth'
+import { getCurrentUser } from '@/utils/auth'
 import { db } from '@/lib/firebase'
 import { Timestamp } from 'firebase-admin/firestore'
 

@@ -4,8 +4,9 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ExternalLink, Github, Eye, Info, ArrowRight } from 'lucide-react'
-import { projects } from '@/lib/projects'
-import ProjectModal from './ProjectModal'
+import { projects } from '@/data/projects'
+import { portfolioData } from '@/data/portfolio'
+import ProjectModal from '@/components/molecules/ProjectModal'
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
@@ -33,10 +34,10 @@ const Portfolio = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            My Portfolio
+            {portfolioData.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore my latest projects and see how I bring ideas to life with modern technologies and creative solutions.
+            {portfolioData.subtitle}
           </p>
         </motion.div>
 
@@ -146,18 +147,18 @@ const Portfolio = () => {
         >
           <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              Have a Project in Mind?
+              {portfolioData.cta.title}
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              I'm always excited to work on new and challenging projects. Let's discuss your ideas and create something amazing together.
+              {portfolioData.cta.description}
             </p>
             <motion.a
-              href="#contact"
+              href={portfolioData.cta.href}
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Start a Project</span>
+              <span>{portfolioData.cta.buttonText}</span>
               <ExternalLink className="ml-2 w-5 h-5" />
             </motion.a>
           </div>

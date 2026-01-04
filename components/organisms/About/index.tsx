@@ -1,26 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Palette, Zap, Database, Globe, Smartphone } from 'lucide-react'
+import { skills, stats, aboutText } from '@/data/about'
 
-// Skills and experience data
 const About = () => {
-  const skills = [
-    { name: 'Frontend Development', icon: Code, description: 'React, Next.js, TypeScript, JavaScript' },
-    { name: 'Backend Development', icon: Database, description: 'Node.js, Express.js, Python, Java' },
-    { name: 'Mobile Development', icon: Smartphone, description: 'React Native, Flutter, Android' },
-    { name: 'Cloud & DevOps', icon: Zap, description: 'AWS, Docker, Kubernetes, CI/CD' },
-    { name: 'UI/UX Design', icon: Palette, description: 'Figma, Tailwind CSS, Material-UI' },
-    { name: 'Web Technologies', icon: Globe, description: 'HTML5, CSS3, REST APIs, GraphQL' },
-  ]
-
-  const stats = [
-    { number: '3+', label: 'Years Experience' },
-    { number: '50+', label: 'Projects Completed' },
-    { number: '15+', label: 'Technologies' },
-    { number: '100%', label: 'Client Satisfaction' },
-  ]
-
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-pink-50 to-purple-50 w-full" aria-label="About section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,10 +15,10 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            About Me
+            {aboutText.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I'm a passionate Full Stack Developer with expertise in modern web technologies and a love for creating innovative digital solutions.
+            {aboutText.subtitle}
           </p>
         </motion.div>
 
@@ -48,18 +31,12 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold mb-6 text-gray-800">
-              Turning Ideas Into Reality
+              {aboutText.heading}
             </h3>
             <div className="space-y-4 text-gray-600">
-              <p>
-                I'm a dedicated Full Stack Developer with over 4 years of experience in building scalable web applications and mobile solutions. My journey in technology started with a curiosity to understand how things work, which has evolved into a passion for creating meaningful digital experiences.
-              </p>
-              <p>
-                I specialize in React, Node.js, and cloud technologies, with a strong foundation in both frontend and backend development. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends and best practices.
-              </p>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I'm always excited to take on new challenges and learn from every project.
-              </p>
+              {aboutText.paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </motion.div>
 

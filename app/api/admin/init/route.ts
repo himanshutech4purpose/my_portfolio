@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { initializeAdminUser } from '@/lib/init-admin'
+import { initializeAdminUser } from '@/utils/init-admin'
 
 export const runtime = 'nodejs'
 

@@ -1,12 +1,12 @@
-import Navigation from '@/components/Navigation'
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Services from '@/components/Services'
-import Portfolio from '@/components/Portfolio'
-import Blogs from '@/components/Blogs'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
-import AdminLoginButton from '@/components/AdminLoginButton'
+import Navigation from '@/components/organisms/Navigation'
+import Hero from '@/components/organisms/Hero'
+import About from '@/components/organisms/About'
+import Services from '@/components/organisms/Services'
+import Portfolio from '@/components/organisms/Portfolio'
+import Blogs from '@/components/organisms/Blogs'
+import Contact from '@/components/organisms/Contact'
+import Footer from '@/components/organisms/Footer'
+import AdminLoginButton from '@/components/molecules/AdminLoginButton'
 
 export default function Home() {
   return (

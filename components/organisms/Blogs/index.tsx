@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Calendar, Eye, ArrowRight, FileText } from 'lucide-react'
+import { blogsData } from '@/data/blogs'
 
 interface Blog {
   id: string
@@ -68,10 +69,10 @@ const Blogs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            My Blog
+            {blogsData.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Thoughts, insights, and experiences from my journey as a developer.
+            {blogsData.subtitle}
           </p>
         </motion.div>
 
@@ -83,7 +84,7 @@ const Blogs = () => {
         ) : blogs.length === 0 ? (
           <div className="text-center py-12">
             <FileText size={64} className="mx-auto text-gray-400 mb-4" aria-hidden="true" />
-            <p className="text-gray-600 text-lg">No blog posts yet. Check back soon!</p>
+            <p className="text-gray-600 text-lg">{blogsData.emptyState.message}</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

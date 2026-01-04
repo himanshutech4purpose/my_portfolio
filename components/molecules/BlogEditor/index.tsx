@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Save, Trash2, Plus, LogOut, FileText, X } from 'lucide-react'
-import RichTextEditor from './RichTextEditor'
+import RichTextEditor from '@/components/molecules/RichTextEditor'
 
 interface Blog {
   id: string
