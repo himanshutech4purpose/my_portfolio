@@ -1,7 +1,7 @@
 import Navigation from '@/components/organisms/Navigation'
 import Hero from '@/components/organisms/Hero'
 import About from '@/components/organisms/About'
-import Services from '@/components/organisms/Services'
+// import Services from '@/components/organisms/Services'
 import Portfolio from '@/components/organisms/Portfolio'
 import Blogs from '@/components/organisms/Blogs'
 import Contact from '@/components/organisms/Contact'
@@ -14,7 +14,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <About />
-      <Services />
+      {/* <Services /> */}
       <Portfolio />
       <Blogs />
       <Contact />
