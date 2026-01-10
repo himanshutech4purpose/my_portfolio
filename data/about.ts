@@ -12,7 +12,7 @@ export interface Stat {
 }
 
 export const skills: Skill[] = [
-  { name: 'Generative AI | Machine learning | Deeplearning', icon: Code, description: 'DeepFake audio-video model finetuning, LLMs (Langgraph, Langchain, LLM finetuning, embedding finetuning, textgrad, hybrid RAG), deep learning models (BERT, BGE Reranker, Wav2Lip, VITS, Coqui-TTS), AI guardrails, ML algorithms, Computer vision (Yolo models, CNN)'},
+  { name: 'Generative AI | Machine learning | Deeplearning', icon: Palette, description: 'DeepFake audio-video model finetuning, LLMs (Langgraph, Langchain, LLM finetuning, embedding finetuning, textgrad, hybrid RAG), deep learning models (BERT, BGE Reranker, Wav2Lip, VITS, Coqui-TTS), AI guardrails, ML algorithms, Computer vision (Yolo models, CNN)'},
   { name: 'Backend Development', icon: Database, description: 'FastAPI, Gin (Go), Express.js'},
   { name: 'Cloud & DevOps', icon: Zap, description: 'AWS, GCP,Docker, Kubernetes, CI/CD with Github Actions' },
   { name: 'Frontend Development', icon: Code, description: 'React, Next.js, TypeScript, JavaScript' },
