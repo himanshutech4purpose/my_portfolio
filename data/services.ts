@@ -1,4 +1,4 @@
-import { Globe, Smartphone, Palette, Database, Zap, Cloud, Shield } from 'lucide-react'
+import { Globe, Smartphone, Palette, Database, Cloud, Shield } from 'lucide-react'
 
 export interface Service {
   icon: typeof Globe

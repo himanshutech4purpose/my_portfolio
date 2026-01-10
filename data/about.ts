@@ -1,4 +1,4 @@
-import { Code, Palette, Zap, Database, Globe, Smartphone } from 'lucide-react'
+import { Code, Palette, Zap, Database, Globe } from 'lucide-react'
 
 export interface Skill {
   name: string
