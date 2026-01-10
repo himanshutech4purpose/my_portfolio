@@ -18,6 +18,6 @@ export const footerData = {
     'UI/UX Design',
     'Technical Consulting'
   ],
-  copyright: '© 2024 Himanshu. All rights reserved.'
+  copyright: '© 2026 Himanshu. All rights reserved.'
 }
 
