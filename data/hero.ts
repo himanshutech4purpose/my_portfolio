@@ -1,7 +1,7 @@
 export const heroData = {
   name: 'Himanshu',
-  title: 'Full Stack Developer & Tech Enthusiast',
-  description: 'Passionate about creating innovative web solutions and exploring cutting-edge technologies. Specialized in React, Node.js, and cloud technologies.',
+  title: 'Senior Software Developer | Full Stack Developer (Python, Go, Typescript) | Generative AI (AI/ML, NLP, GAN, ML algorithms)',
+  description: 'IIT Ropar graduate with 5 years of experience in data engineering, data science, and backend development. Passionate about solving complex problems using cutting-edge technologies and machine learning.',
   cta: {
     primary: {
       text: 'View My Work',
